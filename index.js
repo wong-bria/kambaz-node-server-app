@@ -5,6 +5,7 @@ import cors from "cors";
 import db from "./kambaz/database/index.js"; 
 import UserRoutes from "./kambaz/users/routes.js"; 
 import CourseRoutes from "./kambaz/courses/routes.js"; 
+import ModuleRoutes from "./kambaz/modules/routes.js";
 import "dotenv/config";                             // import the new dotenv library to read .env file
 import session from "express-session"; 
 
@@ -39,6 +40,7 @@ app.use(express.json());            // make sure this statement occurs AFTER set
 
 UserRoutes(app, db);
 CourseRoutes(app, db); 
+ModuleRoutes(app, db);
 Hello(app)
 Lab5(app); 
 app.listen(process.env.PORT || 4000) 

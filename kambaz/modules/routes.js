@@ -25,10 +25,10 @@ export default function ModulesRoutes(app, db) {
     res.send(status); 
   } 
 
-  const updateModule = async (req, res) => { 
+  const updateModule = (req, res) => { 
     const { moduleId } = req.params; 
     const moduleUpdates = req.body; 
-    const status = await dao.updateModule(moduleId, moduleUpdates); 
+    const status = dao.updateModule(moduleId, moduleUpdates); 
     res.send(status); 
   } 
 

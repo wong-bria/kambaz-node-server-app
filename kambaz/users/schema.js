@@ -1,4 +1,5 @@
 import mongoose from "mongoose"; 
+
 const userSchema = new mongoose.Schema({ 
     _id: String,                                              // primary key name is _id of type String
     username: { type: String, required: true, unique: true }, 

@@ -1,7 +1,8 @@
 import mongoose from "mongoose"; 
+import { v4 as uuidv4 } from "uuid";
 
 const userSchema = new mongoose.Schema({ 
-    _id: String,                                              // primary key name is _id of type String
+    _id: { type: String, default: uuidv4 },                 // primary key name is _id of type String
     username: { type: String, required: true, unique: true }, 
     password: { type: String, required: true }, 
     firstName: String, 

@@ -1,30 +1,28 @@
 import EnrollmentsDao from "../enrollments/dao.js"; 
 
-export default function EnrollmentsRoutes(app, db) { 
-  const dao = EnrollmentsDao(db); 
+export default function EnrollmentsRoutes(app) { 
+  const dao = EnrollmentsDao(); 
 
-  const findEnrollmentsForUser = (req, res) => { 
+  const findEnrollmentsForUser = async (req, res) => { 
     const { userId } = req.params; 
-    const enrollments = dao.findEnrollmentsForUser(userId); 
+    const enrollments = await dao.findEnrollmentsForUser(userId); 
     res.json(enrollments); 
   } 
 
-  const createEnrollmentForUser = (req, res) => { 
-    const { userId, courseId } = req.params;
-    const newEnrollment = dao.enrollUserInCourse(userId, courseId);
-    res.send(newEnrollment); 
-  } 
+  // const createEnrollmentForUser = (req, res) => { 
+  //   const { userId, courseId } = req.params;
+  //   const newEnrollment = dao.enrollUserInCourse(userId, courseId);
+  //   res.send(newEnrollment); 
+  // } 
 
-  const deleteEnrollment = (req, res) => { 
-    const { userId, courseId } = req.params;
-    const status = dao.unenrollUserFromCourse(userId, courseId);
-    res.send(status); 
-  } 
-
-
+  // const deleteEnrollment = (req, res) => { 
+  //   const { userId, courseId } = req.params;
+  //   const status = dao.unenrollUserFromCourse(userId, courseId);
+  //   res.send(status); 
+  // } 
 
 
-  app.delete("/api/enrollments/:userId/:courseId", deleteEnrollment);
-  app.post("/api/enrollments/:userId/:courseId", createEnrollmentForUser); 
+  // app.delete("/api/enrollments/:userId/:courseId", deleteEnrollment);
+  // app.post("/api/enrollments/:userId/:courseId", createEnrollmentForUser); 
   app.get("/api/enrollments/:userId", findEnrollmentsForUser); 
 } 

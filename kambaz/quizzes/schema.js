@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const assignmentSchema = new mongoose.Schema(
+const quizSchema = new mongoose.Schema(
   {
     _id: String,
     course: String,
@@ -9,6 +9,7 @@ const assignmentSchema = new mongoose.Schema(
     points: Number,
     due: String,
     available: String,
+    due: String,
     assignmentGroup: String,
     display: String,
     type: String,
@@ -16,7 +17,7 @@ const assignmentSchema = new mongoose.Schema(
     assign: String,
     until: String,
   },
-  { collection: "assignments" }
+  { collection: "quizzes" }
 );
 
-export default assignmentSchema;
+export default quizSchema;

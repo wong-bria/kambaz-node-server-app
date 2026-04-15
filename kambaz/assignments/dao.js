@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid"; 
 import model from "./model.js";
 
-export default function AssignmentsDao(db) {
+export default function AssignmentsDao() {
   async function createAssignment(assignment) {
     const newAssignment = { ...assignment, _id: uuidv4() };
     return await model.create(newAssignment);

@@ -3,19 +3,26 @@ import mongoose from "mongoose";
 const quizSchema = new mongoose.Schema(
   {
     _id: String,
-    course: String,
     title: String,
-    description: String,
-    points: Number,
-    due: String,
+    course: String,
     available: String,
     due: String,
+    points: Number,
+    shuffle: String,
     assignmentGroup: String,
-    display: String,
-    type: String,
-    options: String,
-    assign: String,
+    timeLimit: String,
+    multipleAttempts: String,
+    howManyAttempts: String,
+    showCorrectAnswers: String,
     until: String,
+    accessCode: String,
+    oneQuestionPerTime: String,
+    webcam: String,
+    lock: String,
+    published: Boolean,
+    questions: Number,
+    type: String
+
   },
   { collection: "quizzes" }
 );

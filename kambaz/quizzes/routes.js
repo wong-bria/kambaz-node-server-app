@@ -38,6 +38,4 @@ export default function QuizzesRoutes(app) {
   app.get("/api/courses/:courseId/quizzes", findQuizzesForCourse); 
   app.post("/api/courses/:courseId/quizzes", createQuizForCourse); 
   app.delete("/api/quizzes/:quizId", deleteQuiz);
-
- 
 } 

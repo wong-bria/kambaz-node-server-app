@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import questionSchema from "../questions/schema.js";
 
 const quizSchema = new mongoose.Schema(
   {
@@ -20,8 +21,8 @@ const quizSchema = new mongoose.Schema(
     webcam: Boolean,
     lock: Boolean,
     published: Boolean,
-    questions: Number,
-    type: String
+    type: String,
+    questions: [questionSchema]
   },
   { collection: "quizzes" }
 );

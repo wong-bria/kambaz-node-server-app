@@ -22,7 +22,8 @@ const quizSchema = new mongoose.Schema(
     lock: Boolean,
     published: Boolean,
     type: String,
-    questions: [questionSchema]
+    questions: [questionSchema],
+    description: String
   },
   { collection: "quizzes" }
 );

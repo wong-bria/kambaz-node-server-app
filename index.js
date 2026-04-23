@@ -11,6 +11,7 @@ import AssignmentRoutes from "./kambaz/assignments/routes.js";
 import EnrollmentsRoutes from './kambaz/enrollments/routes.js';
 import QuizzesRoutes from './kambaz/quizzes/routes.js';
 import QuestionsRoutes from './kambaz/questions/routes.js';
+import QuizAttemptsRoutes from './kambaz/quizAttempts/routes.js';
 import "dotenv/config";                             // import the new dotenv library to read .env file
 import session from "express-session"; 
 
@@ -51,6 +52,8 @@ AssignmentRoutes(app, db);
 EnrollmentsRoutes(app, db);
 QuizzesRoutes(app, db);
 QuestionsRoutes(app, db);
+QuizAttemptsRoutes(app, db);
+
 Hello(app)
 Lab5(app); 
 app.listen(process.env.PORT || 4000) 

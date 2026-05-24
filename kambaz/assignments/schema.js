@@ -9,7 +9,6 @@ const assignmentSchema = new mongoose.Schema(
     points: Number,
     due: String,
     available: String,
-    due: String,
     assignmentGroup: String,
     display: String,
     type: String,

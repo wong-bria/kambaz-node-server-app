@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import model from "./model.js"; 
 import enrollmentsModel from "../enrollments/model.js";
 
-export default function CoursesDao(db) { 
+export default function CoursesDao() { 
   function findAllCourses() { 
     return model.find({}, { name: 1, description: 1, image: 1 }); 
   } 

@@ -1,9 +1,9 @@
 import CoursesDao from "./dao.js"; 
 import EnrollmentsDao from "../enrollments/dao.js"; 
 
-export default function CourseRoutes(app, db) { 
-  const dao = CoursesDao(db); 
-  const enrollmentsDao = EnrollmentsDao(db); 
+export default function CourseRoutes(app) { 
+  const dao = CoursesDao(); 
+  const enrollmentsDao = EnrollmentsDao(); 
 
   const createCourse = async (req, res) => { 
     const newCourse = await dao.createCourse(req.body); 
